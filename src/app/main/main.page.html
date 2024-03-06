@@ -1,0 +1,23 @@
+<ion-header [translucent]="true" class="calendar-header">
+  <ion-toolbar>
+    <ion-title>Calendar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <!--<ion-title size="large">main</ion-title> 
+      <a href="">Login</a> -->
+    </ion-toolbar>
+  </ion-header>
+  <ion-footer class="calendar-footer">
+    <ion-card-content>
+    <ion-grid>
+      <ion-datetime locale="es-ES">
+        <span slot="time-label">Time</span>
+      </ion-datetime>
+    </ion-grid>
+    </ion-card-content>
+  </ion-footer>
+</ion-content>
