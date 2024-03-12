@@ -15,7 +15,18 @@ import { RouterLink } from '@angular/router';
 })
 export class MainPage implements OnInit {
 
-  constructor() { }
+  highlightedDates=[
+    {
+      date: '2024-01-22',
+      textColor: '#800080',
+      backgroundColor: '#ffc0cb',
+    },
+
+  ];
+
+  constructor() {
+
+   }
 
   ngOnInit() {
   }
