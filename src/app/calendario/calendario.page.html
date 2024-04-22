@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Calendar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment>
+    <ion-segment-button value="schedule">Schuedule</ion-segment-button>
+    <ion-segment-button value="task">Task</ion-segment-button>
+    <ion-segment-button value="notes">Notes</ion-segment-button>
+    
+  </ion-segment>
+  
+  <ion-datetime presentation="date" value="2024-01-01" [highlightedDates]="highlightedDates"></ion-datetime>
+  <br>
+  <ion-datetime presentation="date" value="2024-02-01" [highlightedDates]="highlightedDates"></ion-datetime>
+  <br>
+  <ion-datetime presentation="date" value="2024-03-01" [highlightedDates]="highlightedDates"></ion-datetime>
+  <br>
+  <ion-datetime presentation="date" value="2024-04-01" [highlightedDates]="highlightedDates"></ion-datetime>
+  <br>
+  <ion-datetime presentation="date" value="2024-05-01" [highlightedDates]="highlightedDates"></ion-datetime>
+  <br>
+  <ion-datetime presentation="date" value="2024-06-01" [highlightedDates]="highlightedDates"></ion-datetime>
+</ion-content>

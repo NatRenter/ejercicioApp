@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>newHomework</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      
+      <ion-input type="text" placeholder="Título de la nota"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Fecha</ion-label>
+      <ion-datetime presentation="date" value="2024-01-01" [highlightedDates]="highlightedDates"></ion-datetime>
+      <br>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Detalles</ion-label>
+      <ion-textarea rows="4" placeholder="Escriba los detalles"></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" id="present-alert" [routerLink]="['/main']">Agregar Nota</ion-button>
+  <ion-alert trigger="present-alert" message="Nota agregada"></ion-alert>
+
+  
+</ion-content>

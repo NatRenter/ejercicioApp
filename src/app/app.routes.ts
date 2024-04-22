@@ -26,5 +26,21 @@ export const routes: Routes = [
     path: 'ejercicios',
     loadComponent: () => import('./ejercicios/ejercicios.page').then( m => m.EjerciciosPage)
   },
+  {
+    path: 'nueva-tarea',
+    loadComponent: () => import('./nueva-tarea/nueva-tarea.page').then( m => m.NuevaTareaPage)
+  },
+  {
+    path: 'lista-tarea',
+    loadComponent: () => import('./lista-tarea/lista-tarea.page').then( m => m.ListaTareaPage)
+  },
+  {
+    path: 'calendario',
+    loadComponent: () => import('./calendario/calendario.page').then( m => m.CalendarioPage)
+  },
+  {
+    path: 'home',
+    loadComponent: () => import('./home/home.page').then( m => m.HomePage)
+  },
 
 ];

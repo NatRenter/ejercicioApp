@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Directorio Telefonico</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<ion-list>
+  @for(user of users; track $index){
+    <ion-item>
+      <ion-label>
+        <p>name:{{user.name}}</p>
+        <p>email:{{user.email}}</p>
+        <p>noControl:{{user.NoControl}}</p>
+        <p>department:{{user.departament}}</p>
+      </ion-label>
+    </ion-item>
+  }
+</ion-list>
+<ion-card>
+  <ion-label>
+    NAME
+  </ion-label>
+  <ion-input type="text">
+
+  </ion-input>
+</ion-card>
+</ion-content>

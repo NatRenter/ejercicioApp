@@ -1,29 +1,92 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Calendar</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <ion-segment>
-    <ion-segment-button value="schedule">Schuedule</ion-segment-button>
-    <ion-segment-button value="task">Task</ion-segment-button>
-    <ion-segment-button value="notes">Notes</ion-segment-button>
-    
-  </ion-segment>
+<div class="wrapper">
+  <ion-menu contentId="main-content" side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu Content</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">This is the menu content.</ion-content>
+  </ion-menu>
   
-  <ion-datetime presentation="date" value="2024-01-01" [highlightedDates]="highlightedDates"></ion-datetime>
-  <br>
-  <ion-datetime presentation="date" value="2024-02-01" [highlightedDates]="highlightedDates"></ion-datetime>
-  <br>
-  <ion-datetime presentation="date" value="2024-03-01" [highlightedDates]="highlightedDates"></ion-datetime>
-  <br>
-  <ion-datetime presentation="date" value="2024-04-01" [highlightedDates]="highlightedDates"></ion-datetime>
-  <br>
-  <ion-datetime presentation="date" value="2024-05-01" [highlightedDates]="highlightedDates"></ion-datetime>
-  <br>
-  <ion-datetime presentation="date" value="2024-06-01" [highlightedDates]="highlightedDates"></ion-datetime>
-</ion-content>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+  
+      <div class="logo-container" slot="start">
+        <img src="../assets/img/logo_transparent.png" class="logo">
+      </div>
+  
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding" id="main-content">
+    <p>Tap the button in the toolbar to open the menu.</p>
+  </ion-content>
+
+
+<!--contenido principal de la pagina-->
+
+  <ion-content [fullscreen]="true">
+    <ion-grid>
+      <ion-row>
+        
+        <ion-col>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Card Title</ion-card-title>
+              <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+            
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Card Title</ion-card-title>
+              <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+            </ion-card-header>
+          
+            <ion-card-content>
+            
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Card Title</ion-card-title>
+              <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+            </ion-card-header>
+          
+            <ion-card-content>
+            
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Card Title</ion-card-title>
+              <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+            </ion-card-header>
+          
+            <ion-card-content>
+            
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+  </ion-content>
+</div>
 
 
 

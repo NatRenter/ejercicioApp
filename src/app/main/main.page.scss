@@ -1,0 +1,23 @@
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .logo {
+    right: 500px;
+    max-height: 500px; /* o el tamaño que desees */
+    max-width: 100%; /* asegura que no se estire más allá de su tamaño original */
+  }
+
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  ion-content {
+    flex: 1; /* Ocupa todo el espacio disponible */
+  }
+  
