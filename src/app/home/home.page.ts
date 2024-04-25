@@ -6,6 +6,7 @@ import { UserI } from '../common/services/users.models';
 import { FirestoreService } from '../common/services/firestore.service';
 import { RouterLink } from '@angular/router';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -15,6 +16,7 @@ import { RouterLink } from '@angular/router';
 })
 export class HomePage {
   users: UserI[] = [];
+  directorio: diretI[] = [];
 
   constructor(private firestoreService: FirestoreService) {
     this.loadusers();
@@ -27,6 +29,7 @@ export class HomePage {
       }
     })
     
+
     /*const user1 = {
       name: 'Erick',
       email: 'dir@tecnm.piedad.mx',
@@ -49,5 +52,20 @@ export class HomePage {
     this.users.push(user1);
     this.users.push(user2);
     this.users.push(user3);*/
+  }
+  initUser(){
+    this.newUser={
+      name:null,
+      email:null,
+      noControl:null,
+      id:this.firestoreService.createIdDoc(),
+      
+    }
+  }
+  async save(){
+    this.cargando=true;
+    await this.firestoreService.createDocumentID(this.newUser,
+      'Usuarios', this.newUser.id)
+      this.cargando=false;
   }
 }
