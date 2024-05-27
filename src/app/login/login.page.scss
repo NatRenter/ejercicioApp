@@ -1,0 +1,43 @@
+/* Estilo para centrar solo la imagen */
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; /* Ajusta el margen inferior según sea necesario */
+}
+
+.logo img {
+  max-width: 200px; /* Ajusta el tamaño máximo según tu preferencia */
+  width: 100%;
+  height: auto;
+}
+
+/* Estilo para el ion-card */
+ion-card {
+  background-color: #ffffff; /* Color de fondo blanco */
+  color: #000000; /* Color de texto negro */
+  padding: 20px; /* Ajusta el padding según sea necesario */
+}
+
+/* Estilo para centrar el contenido del ion-card */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Estilo para ajustar los inputs */
+ion-input {
+  margin-bottom: 10px; /* Ajusta el margen inferior según sea necesario */
+}
+
+/* Estilo para los enlaces */
+ion-card-content a {
+  color: rgb(91, 153, 211); /* Color del enlace */
+  text-decoration: none; /* Quita el subrayado del enlace */
+  margin-right: 5px; /* Ajusta el margen derecho según sea necesario */
+}
+
+ion-card-content a:hover {
+  text-decoration: underline; /* Subrayado del enlace al pasar el mouse */
+}

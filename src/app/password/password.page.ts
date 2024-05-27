@@ -1,20 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, AlertController } from '@ionic/angular';
+import { RouterLink } from '@angular/router';
+import { AuthService } from '../common/services/auth.service';
 
 @Component({
   selector: 'app-password',
   templateUrl: './password.page.html',
   styleUrls: ['./password.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [IonicModule, CommonModule, FormsModule, RouterLink]
 })
 export class PasswordPage implements OnInit {
+  email: string;
 
-  constructor() { }
+  constructor(private authService: AuthService, private alertController: AlertController) { 
+
+  }
 
   ngOnInit() {
+  }
+
+  async resetPassword() {
+    try {
+      await this.authService.resetPassword(this.email).toPromise();
+      const alert = await this.alertController.create({
+        header: 'Éxito',
+        message: 'Se ha enviado un enlace para restablecer la contraseña a tu correo electrónico.',
+        buttons: ['OK']
+      });
+      await alert.present();
+    } catch (error) {
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'Hubo un problema al enviar el enlace de restablecimiento de contraseña. Por favor, verifica tu correo e intenta nuevamente.',
+        buttons: ['OK']
+      });
+      await alert.present();
+    }
   }
 
 }

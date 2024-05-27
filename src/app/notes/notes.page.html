@@ -1,0 +1,47 @@
+<ion-header>
+  
+  <ion-toolbar color="primary">
+    <ion-title>Crear nota</ion-title>
+    
+    <ion-fab  vertical="center" horizontal="left">
+      <ion-fab-button size="small" [routerLink]="['/lista-tarea']">
+        <ion-icon name="arrow-back-circle-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab><br><br>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-list>
+    <ion-item color="dark">
+      <ion-input type="text" [(ngModel)] = "newUser.titulo" type="text" placeholder="Título de la nota"></ion-input>
+    </ion-item>
+
+    <ion-item color="primary">
+   
+
+      <ion-label>Fecha inicial:</ion-label>
+      <ion-datetime  presentation="date-time" [preferWheel]="true" [(ngModel)] = "newUser.fechaI" color="primary" display-format="DD/MM/YYYY" ></ion-datetime>
+      
+    </ion-item>
+    <br>
+
+    <ion-item color="primary">
+      <ion-label>Fecha final:</ion-label>
+      <ion-datetime presentation="date-time" [preferWheel]="true"[(ngModel)] = "newUser.fechaF" color="primary" display-format="DD/MM/YYYY" ></ion-datetime>
+    </ion-item>
+
+  
+    <ion-item  color="dark">
+      <ion-label position="stacked">Detalles</ion-label>
+      <ion-textarea [(ngModel)] = "newUser.detalles" rows="4" placeholder="Escriba los detalles"></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" id="present-alert" [routerLink]="['/lista-tarea']" (click)="save()" >Agregar Nota</ion-button>
+  <ion-alert trigger="present-alert" message="Nota agregada" ></ion-alert>
+
+  
+</ion-content>

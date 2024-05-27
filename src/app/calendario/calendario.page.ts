@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { RouterLink } from '@angular/router';
+import {RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-calendario',
@@ -41,11 +41,6 @@ export class CalendarioPage implements OnInit {
     {
       date: '2024-02-02',
       textColor: '#E74C3C',
-    },
-    {
-      date: '2024-02-05',
-      textColor: '#FDFEFE',
-      backgroundColor: '#979A9A',
     },
     {
       date: '2024-02-05',
@@ -160,6 +155,7 @@ export class CalendarioPage implements OnInit {
 
 
   ];
+
 
   constructor() {
 

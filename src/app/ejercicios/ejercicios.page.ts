@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, AlertController } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
-import { addIcons } from 'ionicons';
-import { add } from 'ionicons/icons';
+import { AuthService } from '../common/services/auth.service';
 
 @Component({
   selector: 'app-ejercicios',
@@ -15,24 +14,32 @@ import { add } from 'ionicons/icons';
 })
 
 export class EjerciciosPage implements OnInit {
+  email: string;
 
-  isWeekday = (dateString: string) => {
-    const date = new Date(dateString);
-    const utcDay = date.getUTCDay();
+  constructor(private authService: AuthService, private alertController: AlertController) { 
 
-    /**
-     * Date will be enabled if it is not
-     * Sunday or Saturday
-     */
-    return utcDay !== 0 && utcDay !== 6;
-    
-  };
-
-  constructor() { 
-    addIcons({add});
   }
 
   ngOnInit() {
+  }
+
+  async resetPassword() {
+    try {
+      await this.authService.resetPassword(this.email).toPromise();
+      const alert = await this.alertController.create({
+        header: 'Éxito',
+        message: 'Se ha enviado un enlace para restablecer la contraseña a tu correo electrónico.',
+        buttons: ['OK']
+      });
+      await alert.present();
+    } catch (error) {
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'Hubo un problema al enviar el enlace de restablecimiento de contraseña. Por favor, verifica tu correo e intenta nuevamente.',
+        buttons: ['OK']
+      });
+      await alert.present();
+    }
   }
 
 }

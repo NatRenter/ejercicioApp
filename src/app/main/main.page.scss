@@ -1,23 +1,40 @@
 .logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-  
-  .logo {
-    right: 500px;
-    max-height: 500px; /* o el tamaño que desees */
-    max-width: 100%; /* asegura que no se estire más allá de su tamaño original */
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  right: 500px;
+  max-height: 500px; /* o el tamaño que desees */
+  max-width: 100%; /* asegura que no se estire más allá de su tamaño original */
+}
 
 
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  ion-content {
-    flex: 1; /* Ocupa todo el espacio disponible */
-  }
-  
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+ion-content {
+  flex: 1; /* Ocupa todo el espacio disponible */
+}
+
+
+
+ion-toolbar {
+  --background: transparent; /* Asegura que el fondo del toolbar sea transparente */
+  --ion-background-color: transparent; /* Otra manera de asegurar la transparencia */
+  box-shadow: none; /* Elimina cualquier sombra no deseada */
+}
+
+ion-buttons {
+  --background: transparent; /* Asegura que el fondo del contenedor de botones sea transparente */
+  --ion-background-color: transparent; /* Otra manera de asegurar la transparencia */
+}
+
+ion-button{
+  border-radius: 50%;
+  background-color: #2C3333;
+}

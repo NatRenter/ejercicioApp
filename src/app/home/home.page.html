@@ -1,31 +1,77 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Directorio Telefonico</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="wrapper">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content [fullscreen]="true">
-<ion-list>
-  @for(user of users; track $index){
-    <ion-item>
-      <ion-label>
-        <p>name:{{user.name}}</p>
-        <p>email:{{user.email}}</p>
-        <p>noControl:{{user.NoControl}}</p>
-        <p>department:{{user.departament}}</p>
-      </ion-label>
-    </ion-item>
-  }
-</ion-list>
-<ion-card>
-  <ion-item>
-    <ion-label> Numero de control </ion-label>
+  <!--contenido principal de la pagina-->
 
-    <ion-input type="text" [(ngModel)]="newUser.NoControl">
-    
-    </ion-input>
-  </ion-card>
-  </ion-item>
- 
-  
-</ion-content>
+  <ion-content [fullscreen]="true">
+    <ion-grid>
+
+      <ion-row>
+        <ion-col>
+          <h2>Agenda Escolar</h2>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col>
+          <ion-card color="primary">
+            <ion-card-header>
+              <ion-card-title>Actividad 1</ion-card-title>
+              <ion-card-subtitle>Actividades para hoy</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content> </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col>
+          <ion-card color="tertiary">
+            <ion-card-header>
+              <ion-card-title>Semana del estudiante</ion-card-title>
+              <ion-card-subtitle>Eventos</ion-card-subtitle>
+            </ion-card-header>
+
+            <ion-card-content> </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-card-header color="success">
+              <ion-card-title>* Resumen... <p>
+                * Investigacion... <p></p>
+              * Proyecto de... </ion-card-title>
+              <ion-card-subtitle>Trabajos de la semana</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content> </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ion-content>
+</div>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="Calendar">
+      <ion-icon [routerLink]="['/calendario']" name="calendar-outline"></ion-icon>
+      Calendario
+    </ion-tab-button>
+    <ion-tab-button tab="Grades">
+      <ion-icon [routerLink]="['/lista-tarea']" name="reader-outline"></ion-icon>
+      Tareas
+    </ion-tab-button>
+    <ion-tab-button tab="User">
+      <ion-icon [routerLink]="['/login']" name="person-outline"></ion-icon>
+      Login
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

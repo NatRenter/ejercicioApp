@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
-
-
+import { addIcons } from 'ionicons';
+import { personCircle, personOutline, homeOutline, bookOutline, calendarOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-main',
@@ -16,6 +16,7 @@ import { RouterLink } from '@angular/router';
 export class MainPage implements OnInit {
 
   constructor() {
+    addIcons({ personCircle, personOutline, homeOutline, bookOutline, calendarOutline })
 
    }
 

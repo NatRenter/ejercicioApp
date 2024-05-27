@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AuthService } from '../common/services/auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -11,11 +12,18 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule, RouterLink]
 })
-export class RegisterPage implements OnInit {
+export class RegisterPage {
 
-  constructor() { }
+  email: string;
+  password: string;
+  error: string;
 
-  ngOnInit() {
+  constructor(private authService: AuthService, private router: Router) {}
+
+  register() {
+    this.authService.register(this.email, this.password).subscribe({
+      next: () => this.router.navigate(['/login']),
+      error: (err) => this.error = err.message
+    });
   }
-
 }

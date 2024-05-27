@@ -1,7 +1,15 @@
-ion-header{
-    background-color: red;
+ion-content{  
+    --ion-background-color: #ffff ;
+    --ion-segment-button-text-color: black;            
+
 }
 
-ion-segment{
-    background-color: rosybrown;
+ion-item{
+    --ion-item-background:#ffff
+}
+
+p{
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
 }

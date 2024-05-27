@@ -1,26 +1,85 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Calendar</ion-title>
+  <ion-toolbar color="titulo">
+    <ion-title>Calendario de Actividades </ion-title><p></p>
+
   </ion-toolbar>
+
+      <ion-button expand="full" [routerLink]="['/home']">Volver</ion-button>
+      
 </ion-header>
 
-<ion-content>
-  <ion-segment>
-    <ion-segment-button value="schedule">Schuedule</ion-segment-button>
-    <ion-segment-button value="task">Task</ion-segment-button>
-    <ion-segment-button value="notes">Notes</ion-segment-button>
-    
-  </ion-segment>
-  
-  <ion-datetime presentation="date" value="2024-01-01" [highlightedDates]="highlightedDates"></ion-datetime>
-  <br>
-  <ion-datetime presentation="date" value="2024-02-01" [highlightedDates]="highlightedDates"></ion-datetime>
-  <br>
-  <ion-datetime presentation="date" value="2024-03-01" [highlightedDates]="highlightedDates"></ion-datetime>
-  <br>
-  <ion-datetime presentation="date" value="2024-04-01" [highlightedDates]="highlightedDates"></ion-datetime>
-  <br>
-  <ion-datetime presentation="date" value="2024-05-01" [highlightedDates]="highlightedDates"></ion-datetime>
-  <br>
-  <ion-datetime presentation="date" value="2024-06-01" [highlightedDates]="highlightedDates"></ion-datetime>
+<ion-content >
+  <ion-grid>
+    <ion-row>
+      
+      <ion-col> <ion-datetime size="auto" presentation="date" value="2024-01" [highlightedDates]="highlightedDates" ></ion-datetime></ion-col>
+      <ion-col> <ion-datetime size="auto" presentation="date" value="2024-02" [highlightedDates]="highlightedDates"></ion-datetime></ion-col>
+      <ion-col> <ion-datetime size="auto" presentation="date" value="2024-03" [highlightedDates]="highlightedDates"></ion-datetime></ion-col>
+      <ion-col><ion-datetime size="auto" presentation="date" value="2024-04" [highlightedDates]="highlightedDates"></ion-datetime></ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col><ion-datetime size="auto" presentation="date" value="2024-05" [highlightedDates]="highlightedDates"></ion-datetime></ion-col>
+      <ion-col><ion-datetime size="auto" presentation="date" value="2024-06" [highlightedDates]="highlightedDates"></ion-datetime></ion-col> 
+      <ion-col><ion-datetime size="auto" presentation="date" value="2024-07" [highlightedDates]="highlightedDates"></ion-datetime></ion-col>
+      <ion-col>
+
+        <ion-card >
+          <ion-list color="light">
+
+            <ion-item class="Reinscript" >
+              <ion-icon color="GreenYellow" slot="start" name="chevron-up-outline" size="large"></ion-icon>
+              <ion-label>Reinscripciones</ion-label>
+            </ion-item>
+
+            <ion-item class="Inicioclass" >
+              <ion-icon color="Lime" slot="start" name="caret-forward-outline" size="large"></ion-icon>
+              <ion-label>Inicio de Clases</ion-label>
+            </ion-item>
+
+            <ion-item  class="ReinscripTardias">
+              <ion-icon color="Crimson" slot="start" name="chevron-down-outline" size="large"></ion-icon>
+              <ion-label>Reinscripciones tardias</ion-label>
+            </ion-item>
+
+            <ion-item class="SuspensionIn" >
+              <ion-icon color="DarkGray" slot="start" name="ellipse-outline" size="large"></ion-icon>
+              <ion-label>Suspensión/Día inhabil</ion-label>
+            </ion-item>
+
+            <ion-item class="BajasM">
+              <ion-icon color="DarkOrange" slot="start" name="chevron-down-circle-outline" size="large"></ion-icon>
+              <ion-label>Bajas de materias</ion-label>
+            </ion-item>
+
+            <ion-item class="CeremoniaE">
+              <ion-icon color="SeaGreen" slot="start" name="star-outline" size="large"></ion-icon>
+              <ion-label>Ceremonia de Egresados</ion-label>
+            </ion-item>
+
+            <ion-item class="Finclases">
+              <ion-icon color="DarkCyan" slot="start" name="caret-back-outline" size="large"></ion-icon>
+              <ion-label>Fin de clases</ion-label>
+            </ion-item>
+
+            
+            <ion-item class="Cursoverano">
+              <ion-icon color="BlueViolet" slot="start" name="book-outline" size="large"></ion-icon>
+              <ion-label>Cursos de Verano</ion-label>
+            </ion-item>
+
+            <ion-item class="Vac">
+              <ion-icon color="Magenta" slot="start" name="rocket-outline" size="large"></ion-icon>
+              <ion-label>Vacaciones</ion-label>
+            </ion-item>
+
+          </ion-list>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
 </ion-content>

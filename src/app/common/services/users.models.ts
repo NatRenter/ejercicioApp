@@ -1,7 +1,9 @@
+import { Timestamp } from "firebase/firestore";
+
 export interface UserI{
-    name: string;
-    email: string;
-    NoControl: string;
-    departament: string;
-    id: string; 
-};
+    titulo:string;
+    detalles:string;
+    fechaI:Timestamp;
+    fechaF:Timestamp;
+    id:string;
+}

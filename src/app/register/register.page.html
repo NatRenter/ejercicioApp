@@ -1,28 +1,40 @@
-<ion-content>
-  <form action="">
-  <ion-card>
-    <ion-card-title>Registro</ion-card-title>
-      <ion-input
-        type="email"
-        name="email"
-        placeholder="Email"
-        required="required"
-      />
-      <ion-input
-        type="password"
-        name="password"
-        placeholder="Password"
-        required="required"
-      />
-      <ion-input
-        type="password"
-        name="password"
-        placeholder="Repeat the password"
-        required="required"
-      />
-      <ion-card-content>
-      <ion-button [routerLink]="['/login']">Continuar</ion-button>
-    </ion-card-content>
-</ion-card>
-</form>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Title</ion-title>
+    <ion-buttons [collapse]="true" slot="end">
+      <ion-button>Button</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Registrate</ion-title>
+      <ion-buttons [collapse]="true" slot="end">
+        <ion-button [routerLink]="['/login']">Volver</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content color="light">
+  <br>
+  <br>
+  <br>
+  <br>
+<ion-list [inset]="true">
+  <ion-item >
+    <ion-label  color="warning"  position="floating">Email</ion-label>
+    <ion-input  [(ngModel)]="email" type="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label  color="warning"  position="floating">Password</ion-label>
+    <ion-input [(ngModel)]="password" type="password"></ion-input>
+  </ion-item>
+</ion-list>
+<br>
+<br>
+<ion-button expand="full" id="present-alert" (click)="register()">Registrar</ion-button>
+
+<p *ngIf="error">{{ error }}</p>
 </ion-content>

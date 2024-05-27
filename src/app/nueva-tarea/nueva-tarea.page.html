@@ -1,32 +1,77 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>newHomework</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="wrapper">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 
+  <!--contenido principal de la pagina-->
 
+  <ion-content [fullscreen]="true">
+    <ion-grid>
 
-<ion-content>
-  <ion-list>
-    <ion-item>
+      <ion-row>
+        <ion-col>
+          <h2>Agenda Escolar</h2>
+        </ion-col>
+      </ion-row>
       
-      <ion-input type="text" placeholder="Título de la nota"></ion-input>
-    </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-card color="primary">
+            <ion-card-header>
+              <ion-card-title>Actividad 1</ion-card-title>
+              <ion-card-subtitle>Actividades para hoy</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content> </ion-card-content>
+          </ion-card>
+        </ion-col>
 
-    <ion-item>
-      <ion-label position="stacked">Fecha</ion-label>
-      <ion-datetime presentation="date" value="2024-01-01" [highlightedDates]="highlightedDates"></ion-datetime>
-      <br>
-    </ion-item>
+        <ion-col>
+          <ion-card color="tertiary">
+            <ion-card-header>
+              <ion-card-title>Semana del estudiante</ion-card-title>
+              <ion-card-subtitle>Eventos</ion-card-subtitle>
+            </ion-card-header>
 
-    <ion-item>
-      <ion-label position="stacked">Detalles</ion-label>
-      <ion-textarea rows="4" placeholder="Escriba los detalles"></ion-textarea>
-    </ion-item>
-  </ion-list>
+            <ion-card-content> </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
 
-  <ion-button expand="full" id="present-alert" [routerLink]="['/main']">Agregar Nota</ion-button>
-  <ion-alert trigger="present-alert" message="Nota agregada"></ion-alert>
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-card-header color="success">
+              <ion-card-title>* Resumen... <p>
+                * Investigacion... <p></p>
+              * Proyecto de... </ion-card-title>
+              <ion-card-subtitle>Trabajos de la semana</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content> </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
 
-  
-</ion-content>
+    </ion-grid>
+  </ion-content>
+</div>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="Calendar">
+      <ion-icon [routerLink]="['/calendario']" name="calendar-outline"></ion-icon>
+      Calendario
+    </ion-tab-button>
+    <ion-tab-button tab="Grades">
+      <ion-icon [routerLink]="['/lista-tarea']" name="reader-outline"></ion-icon>
+      Tareas
+    </ion-tab-button>
+    <ion-tab-button tab="User">
+      <ion-icon [routerLink]="['/login']" name="person-outline"></ion-icon>
+      Login
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

@@ -1,111 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button default-href="#"></ion-back-button>
-    </ion-buttons>
-    <ion-title><h2>Calendario De Eventos</h2></ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content >
 
-<ion-content>
-  <ion-grid [fixed]="true">
-    <ion-row>
-      <ion-col size="12" >
-        <ion-card>
-          
-          <h1>Calendario escolar ENE-JUL 2024</h1>
-          <img alt="rhino standing near grass"
-            src="/assets/imagenes/calendario.jpg" />
-            
+  <ion-card>
 
+    
+    <div>
+      <ion-button  [routerLink]="['/login']">Volver</ion-button>
+    </div>
 
-        </ion-card>
-
-      </ion-col>
-
-      <ion-col size="12">
-        <ion-card>
-          <h1>ENERO</h1>
-          <img alt="rhino standing near grass"
-            src="/assets/imagenes/enero.jpg" style="width: 600px; height: auto;" />
-
-        </ion-card>
-      </ion-col>
-
-      <ion-col size="12">
-        <ion-card>
-          <h1>FEBRERO</h1>
-          <img alt="rhino standing near grass"
-            src="/assets/imagenes/febrero.jpg" style="width: 600px; height: auto;"/>
-
-        </ion-card>
-      </ion-col>
-      
-      <ion-col size="12">
-        <ion-card>
-          <h1>MARZO</h1>
-          <img alt="rhino standing near grass"
-            src="/assets/imagenes/marzo.jpg" style="width: 600px; height: auto;"/>
-  
-        </ion-card>
-      </ion-col>
-
-      <ion-col size="12">
-        <ion-card>
-          <h1>ABRIL</h1>
-          <img alt="rhino standing near grass"
-            src="/assets/imagenes/abril.jpg" style="width: 600px; height: auto;"/>
-  
-        </ion-card>
-      </ion-col>
-      <ion-col size="12">
-        <ion-card>
-          <h1>MAYO</h1>
-          <img alt="rhino standing near grass"
-            src="/assets/imagenes/mayo.jpg" style="width: 600px; height: auto;"/>
-  
-        </ion-card>
-      </ion-col>
-
-      <ion-col size="12">
-        <ion-card>
-          <h1>JUNIO</h1>
-          <img alt="rhino standing near grass"
-            src="/assets/imagenes/junio.jpg" style="width: 600px; height: auto;"/>
-  
-        </ion-card>
-      </ion-col>
-
-      <ion-col size="12">
-        <ion-card>
-          <h1>JULIO</h1>
-          <img alt="rhino standing near grass"
-            src="/assets/imagenes/julio.jpg" style="width: 600px; height: auto;"/>
-  
-        </ion-card>
-      </ion-col>
-
-    </ion-row>
+    
+      <ion-card-content>
+        <ion-card-title>¿Olvidaste tu contraseña?</ion-card-title>
+        <div class="logo">
+          <img src="assets/imagenes/icono.png">
+        </div>
+        
+        <ion-label>Ingrese su correo</ion-label>
+        <br>
+        <br>
+        <ion-input [(ngModel)]="email" type="email" placeholder="correo@mail.com" required></ion-input>
+        <ion-button expand="block" (click)="resetPassword()">Enviar</ion-button>
+      </ion-card-content>
    
-  </ion-grid>
-   
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button>
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button>
-        <ion-icon name="help-circle" id="ayuda"></ion-icon>
-        <ion-alert trigger="ayuda" message="PROXIMAMENTE MAS CONTENIDO...."></ion-alert>
-      </ion-fab-button>
-      <ion-fab-button>
-        <ion-icon name="home" [routerLink]="['/main']"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button>
-        <ion-icon name="document" [routerLink]="['/login']"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
 
+  </ion-card>
 
 </ion-content>
