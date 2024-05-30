@@ -39,12 +39,7 @@ export const routes: Routes = [
     loadComponent: () => import('./calendario/calendario.page').then( m => m.CalendarioPage)
   },
   {
-    path: 'home',
-    loadComponent: () => import('./home/home.page').then( m => m.HomePage)
-  },
-  {
     path: 'notes',
     loadComponent: () => import('./notes/notes.page').then( m => m.NotesPage)
   },
-
 ];

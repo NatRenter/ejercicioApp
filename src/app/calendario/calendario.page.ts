@@ -4,6 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import {RouterLink } from '@angular/router';
 
+import { addIcons } from 'ionicons';
+import { arrowUndoCircle } from 'ionicons/icons';
+import { FirestoreService } from '../common/services/firestore.service';
+import { ToastController } from '@ionic/angular';
+import { DocumentData, QueryDocumentSnapshot } from '@angular/fire/firestore';
+import { UserI } from '../common/services/users.models';
+
 @Component({
   selector: 'app-calendario',
   templateUrl: './calendario.page.html',
@@ -13,7 +20,14 @@ import {RouterLink } from '@angular/router';
 })
 export class CalendarioPage implements OnInit {
 
-  highlightedDates = [
+  constructor(private firestoreService: FirestoreService, private toastController: ToastController) {
+    addIcons({ arrowUndoCircle })
+  }
+
+  ngOnInit() {
+  }
+
+   highlightedDates = [
     {
       date: '2024-01-22',
       textColor: '#FDFEFE',
@@ -156,12 +170,51 @@ export class CalendarioPage implements OnInit {
 
   ];
 
+  events: UserI[] = []; // Propiedad para almacenar los eventos
 
-  constructor() {
+  async onDateChange(event: CustomEvent) {
+    const selectedDate = event.detail.value.substring(0, 10); // Obtiene la fecha seleccionada en formato 'YYYY-MM-DD'
+    console.log('Fecha seleccionada:', selectedDate);
+    try {
+      const querySnapshot = await this.firestoreService.getEventsByDate(selectedDate);
+      console.log('Documentos obtenidos:', querySnapshot.size);
+      this.events = []; // Limpiar eventos anteriores
+      if (!querySnapshot.empty) {
+        querySnapshot.forEach((doc: QueryDocumentSnapshot<DocumentData>) => {
+          const eventData = doc.data() as UserI;
+          //  console.log('Evento encontrado:', eventData);
+          this.events.push(eventData); // Agregar evento a la lista
+          // Mostrar el toast con los detalles del evento
+          this.presentEventToast(eventData.titulo, eventData.detalles);
+        });
+      } else {
+        console.log('No hay eventos para esta fecha.'); // Añadido para depuración
+        this.presentNoEventsToast();
+      }
+    } catch (error) {
+      console.error('Error al obtener eventos por fecha:', error);
+    }
+  }
 
-   }
+  async presentEventToast(titulo: string, detalles: string) {
+    const toast = await this.toastController.create({
+      header: titulo,
+      message: detalles,
+      position: 'middle',
+      duration: 5000, // Duración en milisegundos
+      color: 'tertiary',
+    });
+    toast.present();
+  }
 
-  ngOnInit() {
+  async presentNoEventsToast() {
+    const toast = await this.toastController.create({
+      message: 'No hay eventos para esta fecha.',
+      position: 'middle',
+      duration: 3000, // Duración en milisegundos
+      color: 'tertiary'
+    });
+    toast.present();
   }
 
 }
