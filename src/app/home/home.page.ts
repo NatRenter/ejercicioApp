@@ -20,7 +20,15 @@ export class HomePage implements OnInit {
 
    }
 
+   
+
+  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit() {
   }
 
+}
+
+interface TabsCustomEvent extends CustomEvent {
+  detail: { tab: string };
+  target: HTMLIonTabsElement;
 }

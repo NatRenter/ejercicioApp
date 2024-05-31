@@ -1,22 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Title</ion-title>
-    <ion-buttons [collapse]="true" slot="end">
-      <ion-button>Button</ion-button>
+    <ion-buttons slot="start" [routerLink]="['/login']">
+      <ion-icon slot="start" name="chevron-back-outline" size="large"></ion-icon>
     </ion-buttons>
+    <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content >
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Registrate</ion-title>
-      <ion-buttons [collapse]="true" slot="end">
-        <ion-button [routerLink]="['/login']">Volver</ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-</ion-header>
-
-
 <ion-content color="light">
   <br>
   <br>
@@ -35,6 +24,5 @@
 <br>
 <br>
 <ion-button expand="full" id="present-alert" (click)="register()">Registrar</ion-button>
-
 <p *ngIf="error">{{ error }}</p>
 </ion-content>

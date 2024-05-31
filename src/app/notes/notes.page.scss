@@ -1,11 +1,17 @@
 ion-content{  
     --ion-background-color: black
 }
-
-
-
 ion-item,ion-datetime {
     --ion-background-color: #e0e0e0;  /* Change background color */
     --ion-text-color: #333;           /* Change text color */
     --ion-border-color: #ccc;         /* Change border color */
   }
+
+  .custom-font-size {
+    font-size: 18px; /* Adjust the size as needed */
+  }
+  
+  .custom-label-size {
+    font-size: 18px; /* Adjust the size as needed */
+  }
+  

@@ -1,35 +1,31 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Lista de Notas</ion-title>
-     
-    <ion-fab vertical="center" horizontal="left">
-      <ion-fab-button size="small" [routerLink]="['/home']">
-        <ion-icon name="arrow-back-circle-outline"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+  <ion-toolbar>
+    <ion-buttons slot="start" [routerLink]="['/home']">
+      <ion-icon slot="start" name="chevron-back-outline" size="large"></ion-icon>
+    </ion-buttons>
+    <ion-title>Lista de tareas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <div *ngIf="userEmail; else notLoggedIn">
-    
+    <ion-button expand="block" (click)="scrollToBottom()">Ultimos</ion-button>
     <ion-list>
-      <ion-item *ngFor="let user of tareas; trackBy: trackByFn">
+      <ion-item *ngFor="let user of tareas; trackBy: trackByFn" >
         <ion-label>
           <p>Título: {{ user.titulo }}</p>
+          <br>
           <p>Detalles: {{ user.detalles }}</p>
+          <br>
           <p>Fecha Inicial: {{ user.fechaI }}</p>
+          <br>
           <p>Fecha Final: {{ user.fechaF }}</p>
         </ion-label>
       </ion-item>
     </ion-list>
-    
-    <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-      <ion-fab-button [routerLink]="['/notes']">
-        <ion-icon name="add-outline"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
   </div>
+
+  <ion-icon slot="start" name="radio-button-on" size="large"></ion-icon>
   
   <ng-template #notLoggedIn>
     <ion-item>
@@ -38,4 +34,7 @@
       </ion-label>
     </ion-item>
   </ng-template>
+  <ion-button expand="block" (click)="scrollToTop()">Primeros</ion-button>
+  <br>
+  <ion-button expand="full"  [routerLink]="['/notes']">Registrar</ion-button>
 </ion-content>
